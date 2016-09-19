@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction to GEE</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to GEE">
+  <meta name="author" content="José Padarian">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+      <slide class="nobackground">
+    <article class="flexbox vcenter">
+      <span>
+        <img width='300px' src="assets/img/usyd_logo.png">
+      </span>
+    </article>
+  </slide>
+    <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/usyd_logo_big.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Introduction to GEE</h1>
+    <h2>Digital Soil Mapping</h2>
+    <p>José Padarian<br/>University of Sydney</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Outline</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul class = "build incremental">
+<li>What is GEE and how it works</li>
+<li>Explore GEE API (<strong>Javascript</strong> and <del>Python</del>)</li>
+<li>DSM workflow (with examples)
+
+<ul>
+<li>Compile covariates</li>
+<li>Extract data from covariates</li>
+<li>Model training</li>
+<li>Generate map</li>
+<li>Export</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark nobackground" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Google Earth Engine</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-3" style="background:;">
+  <article data-timings="">
+    <p><img src="assets/img/google-products.png" width="800" class='centered'></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Features</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Access to over 40 years of Satellite Imagery (with daily updates)</li>
+<li>Algorithms to analyse that data</li>
+<li>Google&#39;s computer clusters to analyse the data at scale</li>
+<li>A web-based tool for interactive data exploration</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark nobackground" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>How does it work?</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-6" style="background:#FFF;">
+  <article data-timings="">
+    <p><img src="assets/img/how_1.png" width="83%"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-7" style="background:#FFF;">
+  <article data-timings="">
+    <p><img src="assets/img/how_2.png" width="83%"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-8" style="background:#FFF;">
+  <article data-timings="">
+    <p><img src="assets/img/how_3.png" width="83%"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-9" style="background:#FFF;">
+  <article data-timings="">
+    <p><img src="assets/img/how_4.png" width="83%"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-10" style="background:#FFF;">
+  <article data-timings="">
+    <p><img src="assets/img/how_5.png" width="83%"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-11" style="background:#FFF;">
+  <article data-timings="">
+    <p><img src="assets/img/how_6.png" width="83%"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-12" style="background:#FFF;">
+  <article data-timings="">
+    <p><img src="assets/img/how_7.png" width="83%"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="nobackground" id="slide-13" style="background:#FFF;">
+  <article data-timings="">
+    <p><img src="assets/img/how_8.png" width="83%"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>Features</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Access to over 40 years of Satellite Imagery (with daily updates)</li>
+<li>Algorithms to analyse that data</li>
+<li>Google&#39;s computer clusters to analyse the data at scale</li>
+<li>A <a href="https://code.earthengine.google.com/">web-based tool</a> for interactive data exploration</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="segue dark nobackground" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>DSM workflow</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Compile covariates</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="assets/img/covariates.png" class='centered' style='margin-top:50px;margin-bottom:50px'></p>
+
+<p>&gt; 200 public datasets<br>
+&gt; 4000 new images every day<br>
+&gt; 5 million images<br>
+&gt; 5 petabytes of data</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://code.earthengine.google.com/97a8ece1d4ea58db05d5317e1e55ea80">Image and Image Collection</a></p>
+
+<p><a href="https://code.earthengine.google.com/141d968b0b815625f1003ea215c3ef4f">Basic calculations</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Extract data from covariates</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>At the moment only using Fusion Tables</li>
+<li>Another alternative is using GeoJSON (usually for small datasets)</li>
+<li>Limit of 500,000 rows (also a size limit)</li>
+</ul>
+
+<p>We will be using data <a href="assets/data/edgeroi_WGS84.csv">SOC from Edgeroi</a></p>
+
+<h1>Let&#39;s import data into <a href="https://drive.google.com/"><img src="assets/img/google_fusion_tables_logo.png" style="padding-top:20px"></a></h1>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2>Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://code.earthengine.google.com/a970ea5bff3005119947380000a53112">Feature Collection</a></p>
+
+<p><a href="https://code.earthengine.google.com/1ad8188d7f26cb631993de0548dd202b">Extract covariates</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>Model training</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Classification and Regression algorithms</li>
+<li>Limited number of algorithms available
+
+<ul>
+<li>Tree-like (CART, Random Forest)</li>
+<li>Perceptron</li>
+<li>Support Vector Machine</li>
+<li>Others</li>
+</ul></li>
+<li>Alternative to use expressions (tree-like structures, linear models)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://code.earthengine.google.com/b0f1030f127383b797e995b92b4d3515">Train model</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2>Generate map</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is the step where we can get most speed gain</p>
+
+<ul>
+<li>The predicion is made at the viewport
+
+<ul>
+<li>It depends on the extent</li>
+<li>It depends on the zoom level (resolution)</li>
+</ul></li>
+</ul>
+
+<p>It&#39;s not always necessary to view the prediction (lazy evaluation)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://code.earthengine.google.com/f06a57cc8638d542385e510182a0c811">Apply model</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>Export</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>There are multiple alternatives:</p>
+
+<p><img src="assets/img/google_drive_logo.png" style="height:100px"></p>
+
+<p><img src="assets/img/google_cloud_storage_logo.png" style="height:100px"></p>
+
+<p>It is also possible to export images as Assets</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <hgroup>
+    <h2>Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><a href="https://code.earthengine.google.com/bf3a7ba541cf8c07cccbe2806fa80af5">Export</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=1 title='Outline'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=2 title='Google Earth Engine'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=3 title='NA'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=4 title='Features'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=5 title='How does it work?'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=6 title='NA'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=7 title='NA'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=8 title='NA'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=9 title='NA'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=10 title='NA'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=11 title='NA'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=12 title='NA'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=13 title='NA'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=14 title='Features'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=15 title='DSM workflow'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=16 title='Compile covariates'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=17 title='Examples'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=18 title='Extract data from covariates'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=19 title='Examples'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=20 title='Model training'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=21 title='Examples'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=22 title='Generate map'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=23 title='Examples'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=24 title='Export'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip'
+        data-slide=25 title='Examples'>
+         25
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
